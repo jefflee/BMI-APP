@@ -2,6 +2,7 @@ package com.example.bmi;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         // Use Toast to show message.
         Toast.makeText(this, bmiStr, Toast.LENGTH_LONG).show();
 
+        Snackbar.make(v, bmiStr, Snackbar.LENGTH_LONG).show();
+
         //產生Builder物件
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         //呼叫setMessage方法設定顯示文字
@@ -77,6 +82,20 @@ public class MainActivity extends AppCompatActivity {
         float height = Float.parseFloat(h);
         float bmi = weight / (height * height);
         return String.valueOf(bmi);
+    }
+
+    public void setData(View v) {
+        String msg = "hi bro.";
+        SharedPreferences pref = getSharedPreferences("test", MODE_PRIVATE);
+        pref.edit()
+                .putString("msg", msg)
+                .commit();
+    }
+
+    public void getData(View v) {
+        String msg = getSharedPreferences("test", MODE_PRIVATE)
+                .getString("msg", "");
+        Snackbar.make(v, msg, Snackbar.LENGTH_LONG).show();
     }
 
     public MainActivity() {

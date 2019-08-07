@@ -56,4 +56,18 @@
         android:layout_height="wrap_content"
         android:onClick="goResult"
         android:text="Go Result" />
+
+    <Button
+        android:id="@+id/SetDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setData"
+        android:text="Set Data" />
+
+    <Button
+        android:id="@+id/GetDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getData"
+        android:text="Get Data" />
 </LinearLayout>
