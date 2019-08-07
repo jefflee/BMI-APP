@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/weight_kg"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="@string/weight_kg" />
+
+    <EditText
+        android:id="@+id/ed_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/height_m"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="@string/height_m" />
+
+    <EditText
+        android:id="@+id/ed_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:id="@+id/cal_bmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="bmi"
+        android:text="@string/calculate_bmi" />
+
+    <Button
+        android:id="@+id/b_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/help" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goResult"
+        android:text="Go Result" />
+</LinearLayout>
