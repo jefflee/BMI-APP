@@ -70,4 +70,12 @@
         android:layout_height="wrap_content"
         android:onClick="getData"
         android:text="Get Data" />
+
+    <Button
+        android:id="@+id/GoTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToPage"
+        android:text="Go to"
+        tools:text="Go to" />
 </LinearLayout>

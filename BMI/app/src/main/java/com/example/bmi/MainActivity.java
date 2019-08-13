@@ -87,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
         return String.valueOf(bmi);
     }
 
+    public void goToPage(View v) {
+        Intent intent = new Intent(this, WebViewActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
