@@ -17,6 +17,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions 'Brand'
+    productFlavors {
+        nike {
+            dimension = 'Brand'
+            minSdkVersion 15
+            applicationId = 'com.example.bmi.nike'
+            targetSdkVersion 29
+        }
+        adidas {
+            dimension = 'Brand'
+            minSdkVersion 15
+            applicationId = 'com.example.bmi.adidas'
+            targetSdkVersion 29
+        }
+    }
 }
 
 dependencies {
