@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+        if (!isTaskRoot()
+                && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER)
+                && getIntent().getAction() != null
+                && getIntent().getAction().equals(Intent.ACTION_MAIN)) {
+
+            finish();
+            return;
+        }
     }
 
     private void findViews() {
@@ -74,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         String bmiStr = getBmiString();
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra("BMI_EXTRA", bmiStr);
+        // target activity don't go to the stack.
+        // intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
     }
 
