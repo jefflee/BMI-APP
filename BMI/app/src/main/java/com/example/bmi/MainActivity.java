@@ -27,6 +27,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*
+            isTaskRoot() is true when there are no activities in activity stack.
+            In your case, if another activity (Third activity in your case) is there in Activity stack,
+            below code will finish the launching activity and will bring Third Activity to screen
+         */
+        if (!isTaskRoot()
+                && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER)
+                && getIntent().getAction() != null
+                && getIntent().getAction().equals(Intent.ACTION_MAIN)) {
+
+            finish();
+            return;
+        }
+
         Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
 
         findViews();
@@ -40,15 +55,6 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
-
-        if (!isTaskRoot()
-                && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER)
-                && getIntent().getAction() != null
-                && getIntent().getAction().equals(Intent.ACTION_MAIN)) {
-
-            finish();
-            return;
-        }
     }
 
     private void findViews() {
